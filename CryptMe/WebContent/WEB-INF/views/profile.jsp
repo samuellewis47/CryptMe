@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,11 +49,31 @@
   </nav>
 </header>
 
+<form:form method="POST" action="./uploadFile" modelAttribute="uploadForm" enctype="multipart/form-data">
 <div class="section-container">
 	<div class="container">
-		
+		<div class="row">
+			<div class="col-md-4"><h4></h4></div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<form:errors path="*" cssClass="errorBlock" element="div" />
+			</div>
+		</div>
+		<div class="row">
+        	<br>                   
+			<div class="col-md-2">
+				<form:label path="uploadFile">Upload Document</form:label>
+				<form:input type="file" path="uploadFile"></form:input>
+			</div>
+        </div>
+        <div class="row">
+        	<br>                
+			<div class="col-md-2"><button type="submit" class="btn btn-primary btn-sm">Upload</button></div>
+        </div>
 	</div>
 </div>
+</form:form>
 
 <footer>
     <div class="section-container footer-container">

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import crypt.form.LoginForm;
+import crypt.form.UploadForm;
 import crypt.service.UserService;
 
 @Controller
@@ -48,8 +49,7 @@ public class SessionController {
 		}
 		
 		if(userService.authenticateUser(loginForm)) {
-			mav.setViewName("profile");
-			return mav;
+			return new ModelAndView("redirect:/profile");
 		}
 		
 		mav.setViewName(LOGIN);
@@ -60,17 +60,14 @@ public class SessionController {
 	public ModelAndView profile() {
 		
 		ModelAndView mav = new ModelAndView();
+		mav.addObject("uploadForm", new UploadForm());
 		mav.setViewName("profile");
 		return mav;
 	}
 	
 	@RequestMapping("/logout")
 	public ModelAndView logout() {
-		
-		ModelAndView mav = new ModelAndView();
-		mav.addObject("loginForm", new LoginForm());
-		mav.setViewName(LOGIN);
-		return mav;
+		return new ModelAndView("redirect:/login");
 	}
 	
 }

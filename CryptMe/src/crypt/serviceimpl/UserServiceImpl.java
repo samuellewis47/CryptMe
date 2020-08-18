@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public boolean authenticateUser(LoginForm loginForm) {
-		User user = userDao.getUser(loginForm.getUserName());
+		User user = userDao.getUserByUserName(loginForm.getUserName());
 		PasswordManager passwordManager = new PasswordManager();
 		String saltedPassword = passwordManager.passwordAbstracter(loginForm.getPlainPassword(), user.getCreatedOn());
 		
