@@ -14,7 +14,7 @@
   
   <link href="./assets/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="${pageContext.request.contextPath}/resources/images/crypt-me-favicon.png" rel="icon">
-  <link href="${pageContext.request.contextPath}/resources/css/main.style.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/css/crypt.main.css" rel="stylesheet">
 
   <title>CryptMe | Sign Up</title>
 
@@ -124,6 +124,8 @@
         </div>
     </div>
 </footer>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/crypt.main.js"></script>
 
 </body>
 

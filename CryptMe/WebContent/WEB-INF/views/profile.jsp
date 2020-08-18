@@ -16,7 +16,7 @@
 
   <title>CryptMe | My Profile</title>
   
-  <link href="${pageContext.request.contextPath}/resources/css/main.style.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/resources/css/crypt.main.css" rel="stylesheet">
   
 </head>
 
@@ -82,6 +82,8 @@
         </div>
     </div>
 </footer>
+
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/css/crypt.main.js"></script>
 
 </body>
 
